@@ -1,0 +1,16 @@
+.Contact-item {
+    align-items: center;
+    padding: 12px;
+  }  
+
+  .Contact-text {
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 16px;
+    border-radius: 3px;
+  }
+
+  .Contact-actions {
+    display: inline;
+  }

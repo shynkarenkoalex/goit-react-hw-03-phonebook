@@ -1,0 +1,12 @@
+.ContactForm-label {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+.Filter-input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    display: block;
+    margin-top: 10px;
+
+}
