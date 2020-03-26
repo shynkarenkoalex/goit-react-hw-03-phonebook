@@ -11,6 +11,23 @@ export default class App extends Component {
     filter: ""
   };
 
+  componentDidMount() {
+    console.log('componentDidMount');
+    const persistedContact = localStorage.getItem('contacts');
+    if (persistedContact !== null) {
+      this.setState({
+        contacts: JSON.parse(persistedContact)
+      })
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('componentDidUpdate');
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
   handleAddContact = contactItem => {
     let isExist = this.state.contacts.find(
       item => item.name === contactItem.name
@@ -65,9 +82,9 @@ export default class App extends Component {
         )}
         {visibleContacts.length > 0 && (
           <ContactList
-            contacts={visibleContacts}
-            onRemoveContact={this.handleRemoveContact}
-          ></ContactList>
+              contacts={visibleContacts}
+              onRemoveContact={this.handleRemoveContact}
+          />
         )}
       </Layout>
     );

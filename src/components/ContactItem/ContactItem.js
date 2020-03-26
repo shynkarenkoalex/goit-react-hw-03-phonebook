@@ -6,10 +6,10 @@ const ContactItem = ({nameItem, numberItem, onRemove}) => (
     <li className='Contact-item'>
         <p className='Contact-text'>{nameItem}: {numberItem}</p>
         <section className='Contact-actions'>
-            <button type='button' className='Contact-button' onClick={onRemove}>Удалить</button>
+            <button type='button' className='Contact-button' onClick={onRemove}>Remove</button>
         </section>
     </li>
-)
+);
 
 ContactItem.propTypes = {
     nameItem: PropTypes.string.isRequired,

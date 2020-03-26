@@ -25,6 +25,8 @@ export default class ContactForm extends Component {
     ev.preventDefault();
     if(this.state.name.trim().length > 0) {
       this.props.onAddContact({ ...this.state })
+    } else {
+      alert('Field Name is required')
     }
     this.reset();
   };
